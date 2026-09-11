@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# LLM / AI crawlers are welcome to index this static marketing site.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.laogrocery.com/sitemap-index.xml

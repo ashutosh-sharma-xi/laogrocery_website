@@ -1,0 +1,44 @@
+---
+import Icon from "./Icon.astro";
+import { services } from "../data/site";
+---
+
+<section id="services" aria-labelledby="services-heading" class="relative overflow-hidden bg-sage-300 py-16 sm:py-24">
+  <div class="pointer-events-none absolute left-1/4 top-0 size-64 -translate-y-1/2 rounded-full bg-sand-300/50 blur-md" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -right-20 bottom-10 size-64 rounded-full bg-brand-200/40 blur-md" aria-hidden="true"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="text-sm font-bold uppercase tracking-widest text-brand-700">What We Deliver</p>
+      <h2 id="services-heading" class="mt-2 text-3xl font-extrabold text-brand-900 sm:text-4xl">
+        Our Services
+      </h2>
+      <p class="mt-4 text-brand-800">
+        Everything your household needs, delivered fresh and fast.
+      </p>
+    </div>
+
+    <ul class="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3">
+      {services.map((service) => (
+        <li class="flex flex-col rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-md sm:p-6">
+          <div
+            class={`flex size-14 items-center justify-center rounded-xl ${
+              service.accent === "brand" ? "bg-brand-100 text-brand-700" : "bg-sand-200 text-brand-800"
+            }`}
+          >
+            <Icon name={service.icon} class="size-7" />
+          </div>
+          <h3 class="mt-4 text-base font-bold text-brand-900 sm:text-lg">{service.title}</h3>
+          <p class="mt-1 flex-1 text-sm text-neutral-600">{service.description}</p>
+          <a
+            href="#contact"
+            class="mt-4 inline-flex items-center gap-1 text-sm font-bold text-brand-700 hover:text-brand-900"
+          >
+            Order Now
+            <Icon name="arrow-up-right" class="size-4" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

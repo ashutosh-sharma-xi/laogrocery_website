@@ -1,0 +1,79 @@
+---
+import Icon from "./Icon.astro";
+import { nearbyCities, site } from "../data/site";
+
+// Illustrative (non-geographic) positions for the city chips around the
+// blob, arranged roughly like the reference layout.
+const positioned = [
+  { name: "Gwalior", top: "6%", left: "58%" },
+  { name: "Indore", top: "30%", left: "12%" },
+  { name: "Bhopal", top: "26%", left: "46%" },
+  { name: "Jabalpur", top: "38%", left: "80%" },
+  { name: "Ujjain", top: "56%", left: "24%" },
+  { name: "Dewas", top: "72%", left: "44%" },
+];
+---
+
+<section id="cities" aria-labelledby="cities-heading" class="bg-sage-200 py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+      <div class="relative mx-auto aspect-square w-full max-w-md">
+        <svg viewBox="0 0 400 400" class="absolute inset-0 h-full w-full text-brand-300/70" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M92 48c26-18 60-8 86-18s58-24 88-8 30 46 52 60 40 20 40 52-24 40-30 64 8 52-18 70-58 6-84 20-40 34-72 24-40-28-62-46-40-16-46-48 6-52 4-80 18-30 42-48Z"
+          />
+        </svg>
+
+        {positioned.map((city) => (
+          <span
+            class="absolute -translate-x-1/2 -translate-y-1/2 rounded-full bg-white px-2.5 py-1 text-[11px] font-semibold text-brand-800 shadow ring-1 ring-black/5"
+            style={{ top: city.top, left: city.left }}
+          >
+            {city.name}
+          </span>
+        ))}
+
+        <span
+          class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1"
+        >
+          <span class="flex size-9 items-center justify-center rounded-full bg-red-600 text-white shadow-lg">
+            <Icon name="pin" class="size-5" />
+          </span>
+          <span class="rounded-full bg-red-600 px-2 py-0.5 text-[11px] font-bold text-white shadow">
+            Mandideep
+          </span>
+        </span>
+
+        <span class="absolute bottom-4 right-2 flex -translate-x-1/2 flex-col items-center gap-1">
+          <span class="flex size-9 items-center justify-center rounded-full bg-brand-700 text-white shadow-lg">
+            <Icon name="pin" class="size-5" />
+          </span>
+          <span class="rounded-full bg-brand-700 px-2 py-0.5 text-[11px] font-bold text-white shadow">
+            To Your City
+          </span>
+        </span>
+      </div>
+
+      <div>
+        <h2 id="cities-heading" class="text-3xl font-extrabold text-brand-900 sm:text-4xl">
+          This Is Where LAO Begins.
+        </h2>
+        <p class="mt-4 flex items-center gap-2 text-lg font-bold text-brand-700">
+          <Icon name="pin" class="size-5" />
+          {site.foundingCity}
+        </p>
+        <p class="mt-4 max-w-md text-neutral-600">
+          Our first city. Our first community. The starting point for a faster India.
+        </p>
+        <ul class="mt-6 flex flex-wrap gap-2">
+          {nearbyCities.map((city) => (
+            <li class="rounded-full border border-brand-200 bg-white px-3 py-1 text-xs font-semibold text-brand-800">
+              {city}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

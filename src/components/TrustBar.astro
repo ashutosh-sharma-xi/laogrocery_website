@@ -1,0 +1,17 @@
+---
+import Icon from "./Icon.astro";
+import { trustBadges } from "../data/site";
+---
+
+<section aria-label="Why customers trust LAO" class="bg-sage-300">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <ul class="grid grid-cols-1 divide-y divide-white/10 rounded-2xl bg-neutral-950 text-white sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+      {trustBadges.map((badge) => (
+        <li class="flex items-center justify-center gap-3 px-6 py-6 text-center">
+          <Icon name={badge.icon} class="size-5 shrink-0 text-brand-300" />
+          <span class="text-sm font-bold sm:text-base">{badge.title}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

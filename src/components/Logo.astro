@@ -1,0 +1,24 @@
+---
+interface Props {
+  class?: string;
+  variant?: "dark" | "light";
+}
+const { class: className = "", variant = "dark" } = Astro.props;
+---
+
+{
+  variant === "light" ? (
+    <a
+      href="#home"
+      class:list={["inline-flex items-center gap-1.5 text-2xl font-extrabold tracking-tight text-white", className]}
+      aria-label="LAO — home"
+    >
+      LAO
+      <img src="/logo-mark-white.png" alt="" class="size-7" width="28" height="28" aria-hidden="true" />
+    </a>
+  ) : (
+    <a href="#home" class:list={["inline-flex items-center", className]} aria-label="LAO — home">
+      <img src="/logo.png" alt="LAO" class="h-8 w-auto sm:h-9" width="273" height="102" />
+    </a>
+  )
+}

@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", "Segoe UI", system-ui, sans-serif;
+
+  --color-brand-50: #eef6ec;
+  --color-brand-100: #d7ead2;
+  --color-brand-200: #b0d5a6;
+  --color-brand-300: #86bd78;
+  --color-brand-400: #5da350;
+  --color-brand-500: #3f8732;
+  --color-brand-600: #2f6d27;
+  --color-brand-700: #245420;
+  --color-brand-800: #1c4019;
+  --color-brand-900: #142d12;
+
+  --color-sage-100: #eef1ea;
+  --color-sage-200: #dde3d4;
+  --color-sage-300: #c9d1c0;
+  --color-sage-400: #b9c2ae;
+
+  --color-sand-200: #ece5c8;
+  --color-sand-300: #e2d8ae;
+
+  --animate-fade-up: fade-up 0.6s ease-out both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+/* Respect reduced-motion preference for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

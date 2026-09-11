@@ -1,0 +1,99 @@
+---
+import Logo from "./Logo.astro";
+import Icon from "./Icon.astro";
+import { navLinks, site } from "../data/site";
+---
+
+<header id="home" class="sticky top-0 z-50 bg-white shadow-sm">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+    <Logo />
+
+    <nav class="hidden lg:flex" aria-label="Primary">
+      <ul class="flex items-center gap-8 text-[15px] font-medium text-brand-900">
+        {navLinks.map((link) => (
+          <li>
+            <a href={link.href} class="transition-colors hover:text-brand-600">
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a
+        href={site.playStoreUrl}
+        class="hidden items-center gap-2 rounded-full bg-brand-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-800 sm:inline-flex"
+      >
+        Download App
+      </a>
+      <button
+        id="menu-toggle"
+        type="button"
+        class="inline-flex size-11 items-center justify-center rounded-full text-brand-900 hover:bg-sage-100 lg:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="Open menu"
+      >
+        <Icon name="menu" class="size-6" />
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav drawer: gives small screens the same primary navigation the
+       desktop prototype has, instead of the nav-less mobile design. -->
+  <div
+    id="mobile-nav"
+    class="hidden border-t border-sage-200 bg-white lg:hidden"
+  >
+    <nav aria-label="Mobile primary">
+      <ul class="flex flex-col divide-y divide-sage-100 px-4">
+        {navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="mobile-nav-link block py-3 text-base font-medium text-brand-900"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <div class="px-4 pb-4 pt-2">
+      <a
+        href={site.playStoreUrl}
+        class="flex items-center justify-center gap-2 rounded-full bg-brand-700 px-5 py-3 text-sm font-semibold text-white"
+      >
+        Download App
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const drawer = document.getElementById("mobile-nav");
+
+  if (toggle && drawer) {
+    const closeIcon =
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-6" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
+    const menuIcon =
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-6" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>';
+
+    const setOpen = (open: boolean) => {
+      drawer.classList.toggle("hidden", !open);
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      toggle.innerHTML = open ? closeIcon : menuIcon;
+    };
+
+    toggle.addEventListener("click", () => {
+      setOpen(drawer.classList.contains("hidden"));
+    });
+
+    drawer.querySelectorAll(".mobile-nav-link").forEach((link) => {
+      link.addEventListener("click", () => setOpen(false));
+    });
+  }
+</script>

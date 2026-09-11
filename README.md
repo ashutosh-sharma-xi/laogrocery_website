@@ -60,11 +60,23 @@ All copy, nav links, service categories, FAQ, and the nearby-cities list live in
 - `public/robots.txt` explicitly allows common AI crawlers (GPTBot, ClaudeBot, Google-Extended) in addition to standard search bots.
 - `public/llms.txt` gives AI assistants/agents a plain-language summary of the site, services, and key pages (an emerging convention for LLM-readable sites).
 - FAQ content is real markup (`<details>/<summary>`, no JS) so it's crawlable and matches the FAQPage structured data.
-- Update `site.url` in `astro.config.mjs` and `src/data/site.ts` once a production domain is confirmed — canonical URLs, sitemap, and OG tags all derive from it.
+- `site.url` in `astro.config.mjs` and `src/data/site.ts` reads Render's auto-injected `RENDER_EXTERNAL_URL` at build time (falling back to a placeholder domain locally), so canonical URLs, the sitemap, and OG tags are correct against whatever `onrender.com` URL Render assigns — no manual edit needed until a custom domain replaces it.
+
+## Deploying to Render
+
+This repo is set up as a Render **Static Site**:
+
+| Setting | Value |
+|---|---|
+| Root Directory | _(leave blank — repo root)_ |
+| Build Command | `npm install && npm run build` |
+| Publish Directory | `dist` |
+| Environment variable | `NODE_VERSION=22` (the app requires Node 22+) |
+
+Once a custom domain is attached in Render, either rely on Render's domain config as-is, or hardcode the final domain into `site.url` in both files above and remove the `RENDER_EXTERNAL_URL` fallback if you want it fixed regardless of environment.
 
 ## Before going live
 
 - [ ] Replace the icon-tile hero collage / stylised map / coded phone mockup with real photography or Figma exports if available.
-- [ ] Confirm the production domain and update `site.url` in `astro.config.mjs` and `src/data/site.ts`.
 - [ ] Update `playStoreUrl`, `supportEmail`, `supportPhone`, and social links in `src/data/site.ts` with real values.
-- [ ] Re-run `npm run build` and spot check `dist/` before deploying (any static host — Netlify, Vercel, Cloudflare Pages, GitHub Pages — works as-is).
+- [ ] Re-run `npm run build` and spot check `dist/` before deploying (any static host — Render, Netlify, Vercel, Cloudflare Pages, GitHub Pages — works as-is).

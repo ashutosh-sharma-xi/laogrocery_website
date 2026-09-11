@@ -4,7 +4,9 @@ export const site = {
   tagline: "Fresh Groceries at Your Doorstep.",
   description:
     "LAO delivers fresh groceries, dairy, snacks, household essentials, personal care and baby care to your doorstep in Mundideep and other Tier 3 cities across Madhya Pradesh. Free delivery on your first order.",
-  url: "https://www.laogrocery.com",
+  // Render sets RENDER_EXTERNAL_URL automatically at build time. Falls back
+  // to the eventual production domain once that's pointed at the service.
+  url: process.env.RENDER_EXTERNAL_URL ?? "https://www.laogrocery.com",
   playStoreUrl: "https://play.google.com/store",
   supportEmail: "support@laogrocery.com",
   supportPhone: "+91-90000-00000",

@@ -1,6 +1,6 @@
 # LAO Delivery — Marketing Website
 
-A static, SEO/LLM-friendly marketing site for **LAO**, a grocery delivery app for Tier 3 Indian cities (launching in Mundideep, Madhya Pradesh). Built from the Figma prototypes for the mobile and web experiences, with the web nav/layout patterns back-ported into the mobile view so small screens aren't missing navigation or the cities/map content.
+A static, SEO/LLM-friendly marketing site for **LAO**, a discounted grocery delivery-and-pickup app for Tier 3 Indian cities (launching in Mandideep, Madhya Pradesh). Built from the Figma prototypes for the mobile and web experiences, with the web nav/layout patterns back-ported into the mobile view so small screens aren't missing navigation or the cities/map content.
 
 ## Stack
 
@@ -52,6 +52,8 @@ All copy, nav links, service categories, FAQ, and the nearby-cities list live in
 - The Madhya Pradesh "This Is Where LAO Begins" map is a stylised illustrative shape with labelled pins — **not** a geographically accurate state boundary. Swap `src/components/CitiesMap.astro`'s SVG path for a real MP boundary/GeoJSON trace if geographic accuracy is needed later.
 - Product photography from the Figma designs (grocery collage, phone screen, footer aisle backdrop) could not be exported from the proto view, so those areas use icon tiles / a coded phone mockup / a color treatment instead. Swap in real photography via `public/` + `<img>` tags whenever assets are available — the layouts are already sized for it.
 - The phone "Log In" screen in the "Built for Your City" section is coded HTML/CSS, not a screenshot — update the fields directly in `CityFit.astro` if the real login flow changes.
+- Delivery vs. pickup and the "discounted home delivery" positioning are called out in the hero, the trust badges, the "Best Prices" point, an FAQ entry, and the footer's Store Locations column — see `whyLaoPoints`, `trustBadges`, `faqs`, and `storeLocations` in `src/data/site.ts`.
+- **`storeLocations`** in `src/data/site.ts` (rendered in the footer) are placeholder addresses in Mandideep — replace with real pickup-store addresses before launch.
 
 ## SEO / LLM-friendliness
 
@@ -79,4 +81,5 @@ Once a custom domain is attached in Render, either rely on Render's domain confi
 
 - [ ] Replace the icon-tile hero collage / stylised map / coded phone mockup with real photography or Figma exports if available.
 - [ ] Update `playStoreUrl`, `supportEmail`, `supportPhone`, and social links in `src/data/site.ts` with real values.
+- [ ] Replace the placeholder `storeLocations` addresses in `src/data/site.ts` with real pickup-store addresses.
 - [ ] Re-run `npm run build` and spot check `dist/` before deploying (any static host — Render, Netlify, Vercel, Cloudflare Pages, GitHub Pages — works as-is).

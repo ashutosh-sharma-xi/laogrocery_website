@@ -2,9 +2,9 @@
   <rect width="1200" height="630" fill="#c9d1c0"/>
   <circle cx="1080" cy="80" r="160" fill="#e2d8ae" opacity="0.6"/>
   <circle cx="100" cy="560" r="200" fill="#b0d5a6" opacity="0.6"/>
-  <text x="90" y="220" font-family="Poppins, Segoe UI, sans-serif" font-size="72" font-weight="800" fill="#142d12">Fresh Groceries at</text>
-  <text x="90" y="300" font-family="Poppins, Segoe UI, sans-serif" font-size="72" font-weight="800" fill="#2f6d27">Your Doorstep.</text>
-  <text x="90" y="380" font-family="Poppins, Segoe UI, sans-serif" font-size="34" fill="#1c4019">LAO — grocery delivery for Mundideep &amp; beyond</text>
+  <text x="90" y="220" font-family="Poppins, Segoe UI, sans-serif" font-size="64" font-weight="800" fill="#142d12">Delivered or Picked Up.</text>
+  <text x="90" y="290" font-family="Poppins, Segoe UI, sans-serif" font-size="64" font-weight="800" fill="#2f6d27">Always Discounted.</text>
+  <text x="90" y="360" font-family="Poppins, Segoe UI, sans-serif" font-size="34" fill="#1c4019">LAO — grocery delivery &amp; pickup for Mandideep &amp; beyond</text>
   <g transform="translate(90,420)">
     <rect width="230" height="64" rx="32" fill="#245420"/>
     <text x="115" y="41" font-family="Poppins, Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#fff" text-anchor="middle">LAO</text>

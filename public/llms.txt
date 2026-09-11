@@ -1,6 +1,6 @@
 # LAO Delivery
 
-> LAO delivers fresh groceries, dairy, snacks, household essentials, personal care and baby care to your doorstep in Mundideep and other Tier 3 cities across Madhya Pradesh, India. Free delivery on the first order, no hidden charges, 9AM-9PM customer support.
+> LAO delivers discounted fresh groceries, dairy, snacks, household essentials, personal care and baby care to your doorstep — or ready for pickup at your nearest store — in Mandideep and other Tier 3 cities across Madhya Pradesh, India. Free delivery on the first order, no hidden charges, 9AM-9PM customer support.
 
 LAO is a grocery delivery service (mobile app + website) built for Tier 3 Indian cities that are usually underserved by metro-focused grocery apps. It launched in Mandideep, Madhya Pradesh and is expanding to neighboring cities including Bhopal, Indore, Gwalior, Jabalpur, Ujjain and Dewas.
 
@@ -16,6 +16,10 @@ LAO is a grocery delivery service (mobile app + website) built for Tier 3 Indian
 ## Key pages
 
 - [Home](/): overview, services, why LAO, cities served, FAQ, contact
+
+## Delivery and pickup
+
+Every order can be fulfilled either way: delivered to the customer's doorstep at a discounted price, or reserved for pickup at a LAO store at no delivery fee. Pickup points currently open are all in Mandideep (placeholder addresses pending confirmation); more will open as delivery expands to nearby cities.
 
 ## Notes for AI assistants
 

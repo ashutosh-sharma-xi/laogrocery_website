@@ -1,16 +1,16 @@
 export const site = {
   name: "LAO",
   fullName: "LAO Delivery",
-  tagline: "Fresh Groceries at Your Doorstep.",
+  tagline: "Groceries Delivered to Your Doorstep or Picked Up In-Store.",
   description:
-    "LAO delivers fresh groceries, dairy, snacks, household essentials, personal care and baby care to your doorstep in Mundideep and other Tier 3 cities across Madhya Pradesh. Free delivery on your first order.",
+    "LAO delivers discounted fresh groceries, dairy, snacks, household essentials, personal care and baby care to your doorstep — or ready for pickup from your nearest store — in Mandideep and other Tier 3 cities across Madhya Pradesh. Free delivery on your first order.",
   // Render sets RENDER_EXTERNAL_URL automatically at build time. Falls back
   // to the eventual production domain once that's pointed at the service.
   url: process.env.RENDER_EXTERNAL_URL ?? "https://www.laogrocery.com",
   playStoreUrl: "https://play.google.com/store",
   supportEmail: "support@laogrocery.com",
   supportPhone: "+91-90000-00000",
-  foundingCity: "Mundideep, Madhya Pradesh",
+  foundingCity: "Mandideep, Madhya Pradesh",
   social: {
     instagram: "https://instagram.com/laogrocery",
     facebook: "https://facebook.com/laogrocery",
@@ -28,8 +28,9 @@ export const navLinks = [
 
 export const trustBadges = [
   { icon: "truck", title: "Fast Delivery" },
-  { icon: "gift", title: "1st Order Delivery free" },
-  { icon: "pin", title: "Now Available in Mundideep" },
+  { icon: "percent", title: "Discounted Home Delivery" },
+  { icon: "store", title: "Pickup From Store" },
+  { icon: "pin", title: "Now Available in Mandideep" },
 ];
 
 export const services = [
@@ -75,7 +76,8 @@ export const whyLaoPoints = [
   {
     number: 1,
     title: "Best Prices",
-    description: "No hidden charges. Cheaper than local stores.",
+    description:
+      "No hidden charges. Home delivery is always discounted versus your local store, and pickup orders skip delivery fees entirely.",
   },
   {
     number: 2,
@@ -105,6 +107,24 @@ export const nearbyCities = [
   "Dewas",
 ];
 
+// Placeholder pickup points — replace with real store addresses once
+// confirmed. All three are in Mandideep, the founding city, until pickup
+// expands to nearby cities alongside delivery.
+export const storeLocations = [
+  {
+    name: "LAO Store — Old Bus Stand Road",
+    area: "Near Bus Stand, Mandideep, MP 462046",
+  },
+  {
+    name: "LAO Store — Industrial Area Phase II",
+    area: "Sector B, Mandideep, MP 462046",
+  },
+  {
+    name: "LAO Store — Housing Board Colony",
+    area: "Main Road, Mandideep, MP 462046",
+  },
+];
+
 export const footerLinks = {
   support: [
     "Groceries",
@@ -131,12 +151,17 @@ export const faqs = [
   {
     question: "Which cities does LAO deliver to?",
     answer:
-      "LAO started in Mundideep, Madhya Pradesh and is expanding to nearby Tier 3 cities and towns across the state, bringing metro-quality grocery delivery to communities that are often left behind.",
+      "LAO started in Mandideep, Madhya Pradesh and is expanding to nearby Tier 3 cities and towns across the state, bringing metro-quality grocery delivery to communities that are often left behind.",
   },
   {
     question: "Is my first order really free?",
     answer:
       "Yes. Every new customer gets free delivery on their first order, with no minimum order value and no hidden charges.",
+  },
+  {
+    question: "Can I pick up my order instead of getting it delivered?",
+    answer:
+      "Yes. Every order can either be delivered to your doorstep at a discounted price, or reserved for pickup at your nearest LAO store — whichever suits you better.",
   },
   {
     question: "What can I order from LAO?",

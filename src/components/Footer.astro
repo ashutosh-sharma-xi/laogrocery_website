@@ -1,7 +1,7 @@
 ---
 import Logo from "./Logo.astro";
 import Icon from "./Icon.astro";
-import { site, footerLinks } from "../data/site";
+import { site, footerLinks, storeLocations } from "../data/site";
 
 const year = new Date().getFullYear();
 ---
@@ -62,7 +62,22 @@ const year = new Date().getFullYear();
       </div>
     </div>
 
-    <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row">
+    <div class="mt-12 border-t border-white/10 pt-8">
+      <h3 class="text-sm font-bold uppercase tracking-wide text-brand-200">Pickup Locations in Mandideep</h3>
+      <ul class="mt-4 grid gap-5 sm:grid-cols-3">
+        {storeLocations.map((store) => (
+          <li class="flex items-start gap-2 text-sm text-brand-100">
+            <Icon name="store" class="mt-0.5 size-4 shrink-0 text-brand-300" />
+            <span>
+              <span class="block font-semibold text-white">{store.name}</span>
+              {store.area}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="mt-8 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row">
       <p class="text-sm text-brand-200">&copy; {year} {site.fullName}. Made for Bharat.</p>
       <a
         href={site.playStoreUrl}

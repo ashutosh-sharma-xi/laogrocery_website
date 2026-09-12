@@ -36,12 +36,14 @@ export const trustBadges = [
 export const services = [
   {
     icon: "carrot",
+    image: "/images/service-fresh-product.webp",
     title: "Fresh Product",
     description: "All organic and fresh.",
     accent: "brand",
   },
   {
     icon: "milk",
+    image: "/images/service-dairy.webp",
     title: "Dairy",
     description: "Milk, Ghee, Butter and More.",
     accent: "sand",
@@ -54,18 +56,21 @@ export const services = [
   },
   {
     icon: "spray",
+    image: "/images/service-household-goods.webp",
     title: "Household Goods",
     description: "Cleaning, Sanitizing, makeup and More.",
     accent: "sand",
   },
   {
     icon: "sparkles",
+    image: "/images/service-beauty.webp",
     title: "Personal products & beauty",
     description: "Moisturizer, cream, makeup and More.",
     accent: "brand",
   },
   {
     icon: "baby",
+    image: "/images/service-baby-care.webp",
     title: "Baby Care",
     description: "Diaper, Wipes, Toys and More.",
     accent: "sand",

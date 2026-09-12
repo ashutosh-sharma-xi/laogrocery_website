@@ -20,23 +20,38 @@ import { services } from "../data/site";
 
     <ul class="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3">
       {services.map((service) => (
-        <li class="flex flex-col rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-md sm:p-6">
-          <div
-            class={`flex size-14 items-center justify-center rounded-xl ${
-              service.accent === "brand" ? "bg-brand-100 text-brand-700" : "bg-sand-200 text-brand-800"
-            }`}
-          >
-            <Icon name={service.icon} class="size-7" />
+        <li class="flex flex-col gap-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:p-6">
+          {service.image ? (
+            <div class="h-28 w-full shrink-0 overflow-hidden rounded-xl sm:order-2 sm:size-28">
+              <img
+                src={service.image}
+                alt={`${service.title} available for delivery or pickup on LAO`}
+                width="400"
+                height="400"
+                loading="lazy"
+                class="size-full object-cover"
+              />
+            </div>
+          ) : (
+            <div
+              class={`flex size-14 shrink-0 items-center justify-center rounded-xl sm:order-2 ${
+                service.accent === "brand" ? "bg-brand-100 text-brand-700" : "bg-sand-200 text-brand-800"
+              }`}
+            >
+              <Icon name={service.icon} class="size-7" />
+            </div>
+          )}
+          <div class="flex flex-1 flex-col sm:order-1">
+            <h3 class="text-base font-bold text-brand-900 sm:text-lg">{service.title}</h3>
+            <p class="mt-1 flex-1 text-sm text-neutral-600">{service.description}</p>
+            <a
+              href="#contact"
+              class="mt-4 inline-flex items-center gap-1 text-sm font-bold text-brand-700 hover:text-brand-900"
+            >
+              Order Now
+              <Icon name="arrow-up-right" class="size-4" />
+            </a>
           </div>
-          <h3 class="mt-4 text-base font-bold text-brand-900 sm:text-lg">{service.title}</h3>
-          <p class="mt-1 flex-1 text-sm text-neutral-600">{service.description}</p>
-          <a
-            href="#contact"
-            class="mt-4 inline-flex items-center gap-1 text-sm font-bold text-brand-700 hover:text-brand-900"
-          >
-            Order Now
-            <Icon name="arrow-up-right" class="size-4" />
-          </a>
         </li>
       ))}
     </ul>

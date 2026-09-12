@@ -36,6 +36,8 @@ src/
 public/
   logo.png                 Primary wordmark (light backgrounds / header)
   logo-mark-white.png      White silhouette of the basket mark (dark backgrounds / footer)
+  images/hero-collage.webp        Hero product collage photo
+  images/service-*.webp           Category photos for 5 of 6 service cards
   favicon.svg, favicon-32.png, favicon-64.png, apple-touch-icon.png
   og-image.png / og-image.svg   Social share preview image
   robots.txt, llms.txt     Crawler + AI-agent guidance
@@ -50,8 +52,8 @@ All copy, nav links, service categories, FAQ, and the nearby-cities list live in
 
 - Faithfully follows both Figma prototypes (mobile: `node-id=127-102`, web: `node-id=116-150`). The mobile prototype in Figma had no header navigation; this build adds the same nav (as a slide-down drawer) to mobile so the experience is consistent across breakpoints, per the brief.
 - The Madhya Pradesh "This Is Where LAO Begins" map is a stylised illustrative shape with labelled pins — **not** a geographically accurate state boundary. Swap `src/components/CitiesMap.astro`'s SVG path for a real MP boundary/GeoJSON trace if geographic accuracy is needed later.
-- Product photography from the Figma designs (grocery collage, phone screen, footer aisle backdrop) could not be exported from the proto view, so those areas use icon tiles / a coded phone mockup / a color treatment instead. Swap in real photography via `public/` + `<img>` tags whenever assets are available — the layouts are already sized for it.
-- The phone "Log In" screen in the "Built for Your City" section is coded HTML/CSS, not a screenshot — update the fields directly in `CityFit.astro` if the real login flow changes.
+- The hero product collage and 5 of the 6 "Our Services" category photos (Fresh Product, Dairy, Household Goods, Beauty, Baby Care) are real photography, optimised to WebP and stored in `public/images/`. **Snacks** still has no source photo, so it falls back to the original icon tile — drop a `service-snacks.webp` into `public/images/` and set `image: "/images/service-snacks.webp"` on that entry in `src/data/site.ts` once one's available (`Services.astro` already prefers `service.image` over the icon when present).
+- The phone "Log In" screen in the "Built for Your City" section and the footer's photographic aisle backdrop are still coded HTML/CSS or a colour treatment rather than real screenshots/photography — swap them in via `public/` + `<img>`/`background-image` whenever those assets are available.
 - Delivery vs. pickup and the "discounted home delivery" positioning are called out in the hero, the trust badges, the "Best Prices" point, an FAQ entry, and the footer's Store Locations column — see `whyLaoPoints`, `trustBadges`, `faqs`, and `storeLocations` in `src/data/site.ts`.
 - **`storeLocations`** in `src/data/site.ts` (rendered in the footer) are placeholder addresses in Mandideep — replace with real pickup-store addresses before launch.
 
@@ -79,7 +81,7 @@ Once a custom domain is attached in Render, either rely on Render's domain confi
 
 ## Before going live
 
-- [ ] Replace the icon-tile hero collage / stylised map / coded phone mockup with real photography or Figma exports if available.
+- [ ] Add a real Snacks category photo (see Design notes above) and drop in a phone-login screenshot / footer aisle photo / accurate MP map if those become available.
 - [ ] Update `playStoreUrl`, `supportEmail`, `supportPhone`, and social links in `src/data/site.ts` with real values.
 - [ ] Replace the placeholder `storeLocations` addresses in `src/data/site.ts` with real pickup-store addresses.
 - [ ] Re-run `npm run build` and spot check `dist/` before deploying (any static host — Render, Netlify, Vercel, Cloudflare Pages, GitHub Pages — works as-is).

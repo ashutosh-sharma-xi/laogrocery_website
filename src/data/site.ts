@@ -55,18 +55,18 @@ export const services = [
     accent: "brand",
   },
   {
-    icon: "spray",
-    image: "/images/service-household-goods.webp",
-    title: "Household Goods",
-    description: "Cleaning, Sanitizing, makeup and More.",
-    accent: "sand",
-  },
-  {
     icon: "sparkles",
     image: "/images/service-beauty.webp",
     title: "Personal products & beauty",
     description: "Moisturizer, cream, makeup and More.",
     accent: "brand",
+  },
+  {
+    icon: "spray",
+    image: "/images/service-household-goods.webp",
+    title: "Household Goods",
+    description: "Cleaning, Sanitizing, makeup and More.",
+    accent: "sand",
   },
   {
     icon: "baby",

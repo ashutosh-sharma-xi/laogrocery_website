@@ -1,9 +1,10 @@
 ---
 interface Props {
   class?: string;
+  imgClass?: string;
   variant?: "dark" | "light";
 }
-const { class: className = "", variant = "dark" } = Astro.props;
+const { class: className = "", imgClass, variant = "dark" } = Astro.props;
 ---
 
 {
@@ -14,11 +15,11 @@ const { class: className = "", variant = "dark" } = Astro.props;
       aria-label="LAO — home"
     >
       LAO
-      <img src="/logo-mark-white.png" alt="" class="size-7" width="28" height="28" aria-hidden="true" />
+      <img src="/logo-mark-white.png" alt="" class={imgClass ?? "size-7"} width="28" height="28" aria-hidden="true" />
     </a>
   ) : (
     <a href="#home" class:list={["inline-flex items-center", className]} aria-label="LAO — home">
-      <img src="/logo.png" alt="LAO" class="h-8 w-auto sm:h-9" width="273" height="102" />
+      <img src="/logo.png" alt="LAO" class={imgClass ?? "h-8 w-auto sm:h-9"} width="273" height="102" />
     </a>
   )
 }

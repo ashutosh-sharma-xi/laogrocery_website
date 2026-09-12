@@ -51,7 +51,7 @@ All copy, nav links, service categories, FAQ, and the nearby-cities list live in
 ## Design notes
 
 - Faithfully follows both Figma prototypes (mobile: `node-id=127-102`, web: `node-id=116-150`). The mobile prototype in Figma had no header navigation; this build adds the same nav (as a slide-down drawer) to mobile so the experience is consistent across breakpoints, per the brief.
-- The Madhya Pradesh "This Is Where LAO Begins" map is a stylised illustrative shape with labelled pins — **not** a geographically accurate state boundary. Swap `src/components/CitiesMap.astro`'s SVG path for a real MP boundary/GeoJSON trace if geographic accuracy is needed later.
+- The Madhya Pradesh "This Is Where LAO Begins" map is a real illustrated map graphic (`public/images/mp-map.webp`), background-removed from a supplied asset — not a hand-drawn placeholder.
 - The hero product collage and 5 of the 6 "Our Services" category photos (Fresh Product, Dairy, Household Goods, Beauty, Baby Care) are real photography, optimised to WebP and stored in `public/images/`. **Snacks** still has no source photo, so it falls back to the original icon tile — drop a `service-snacks.webp` into `public/images/` and set `image: "/images/service-snacks.webp"` on that entry in `src/data/site.ts` once one's available (`Services.astro` already prefers `service.image` over the icon when present).
 - The phone "Log In" screen in the "Built for Your City" section and the footer's photographic aisle backdrop are still coded HTML/CSS or a colour treatment rather than real screenshots/photography — swap them in via `public/` + `<img>`/`background-image` whenever those assets are available.
 - Delivery vs. pickup and the "discounted home delivery" positioning are called out in the hero, the trust badges, the "Best Prices" point, an FAQ entry, and the footer's Store Locations column — see `whyLaoPoints`, `trustBadges`, `faqs`, and `storeLocations` in `src/data/site.ts`.
@@ -82,6 +82,6 @@ Once a custom domain is attached in Render, either rely on Render's domain confi
 ## Before going live
 
 - [ ] Add a real Snacks category photo (see Design notes above) and drop in a phone-login screenshot / footer aisle photo / accurate MP map if those become available.
-- [ ] Update `playStoreUrl`, `supportEmail`, `supportPhone`, and social links in `src/data/site.ts` with real values.
+- [ ] Update `playStoreUrl`, `supportEmail`, `supportPhones`, and social links in `src/data/site.ts` with real values.
 - [ ] Replace the placeholder `storeLocations` addresses in `src/data/site.ts` with real pickup-store addresses.
 - [ ] Re-run `npm run build` and spot check `dist/` before deploying (any static host — Render, Netlify, Vercel, Cloudflare Pages, GitHub Pages — works as-is).

@@ -22,14 +22,14 @@ import { services } from "../data/site";
       {services.map((service) => (
         <li class="flex flex-col gap-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:p-6">
           {service.image ? (
-            <div class="h-28 w-full shrink-0 overflow-hidden rounded-xl sm:order-2 sm:size-28">
+            <div class="h-28 w-full shrink-0 overflow-hidden rounded-xl bg-white p-1.5 ring-1 ring-black/5 sm:order-2 sm:size-28">
               <img
                 src={service.image}
                 alt={`${service.title} available for delivery or pickup on LAO`}
                 width="400"
                 height="400"
                 loading="lazy"
-                class="size-full object-cover"
+                class="size-full rounded-lg object-cover"
               />
             </div>
           ) : (

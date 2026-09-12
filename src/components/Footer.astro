@@ -56,9 +56,11 @@ const year = new Date().getFullYear();
         <p class="mt-6 text-sm text-brand-100">
           <a href={`mailto:${site.supportEmail}`} class="hover:text-white">{site.supportEmail}</a>
         </p>
-        <p class="mt-1 text-sm text-brand-100">
-          <a href={`tel:${site.supportPhone}`} class="hover:text-white">{site.supportPhone}</a>
-        </p>
+        {site.supportPhones.map((phone) => (
+          <p class="mt-1 text-sm text-brand-100">
+            <a href={`tel:${phone.replace(/[^+\d]/g, "")}`} class="hover:text-white">{phone}</a>
+          </p>
+        ))}
       </div>
     </div>
 

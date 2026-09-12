@@ -24,14 +24,14 @@ const organizationSchema = {
     name: site.foundingCity,
   },
   sameAs: Object.values(site.social),
-  contactPoint: {
+  contactPoint: site.supportPhones.map((phone) => ({
     "@type": "ContactPoint",
     contactType: "customer support",
     email: site.supportEmail,
-    telephone: site.supportPhone,
+    telephone: phone,
     areaServed: "IN",
     availableLanguage: ["English", "Hindi"],
-  },
+  })),
 };
 
 const faqSchema = {

@@ -9,7 +9,7 @@ export const site = {
   url: process.env.RENDER_EXTERNAL_URL ?? "https://www.laogrocery.com",
   playStoreUrl: "https://play.google.com/store",
   supportEmail: "support@laogrocery.com",
-  supportPhone: "+91-90000-00000",
+  supportPhones: ["+91-88398-50065", "+91-99930-75757"],
   foundingCity: "Mandideep, Madhya Pradesh",
   social: {
     instagram: "https://instagram.com/laogrocery",
